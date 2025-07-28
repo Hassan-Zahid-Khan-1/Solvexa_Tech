@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="max-w-4xl mx-auto p-6">
+        <!-- Header -->
+        <div class="flex items-center justify-between mb-8">
+            <div>
+                <h1 class="text-3xl font-bold text-gray-900 mb-2">Messages</h1>
+                <p class="text-gray-600">Click on any message to view complete details</p>
+            </div>
+            <!-- Logout Button -->
+            <a href="/logout/" class="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-semibold shadow-sm">
+                Logout
+            </a>
+        </div>
+
+        <!-- Messages Container -->
+        <div class="space-y-4">
+
+
+{% for data in form %}
+            <!-- Message 1 -->
+            {% if not data.is_read %}
+            <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-md cursor-pointer message-item" 
+                 onclick="toggleMessage('message{{ forloop.counter }}')">
+                 {% else %}
+                  <div class="bg-gray-300 rounded-lg shadow-sm border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-md cursor-pointer message-item" 
+                 onclick="toggleMessage('message{{ forloop.counter }}')">
+
+                 {% endif %}
+
+                <div class="p-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            {% comment %} <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-semibold">
+                                JD
+                            </div> {% endcomment %}
+                            <div>
+                                <h3 class="font-semibold text-gray-900">{{data.first_name}} {{data.last_name}}</h3>
+                                <p class="text-sm text-gray-500">
+                                    {{data.submitted_at}}</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                           {% if not data.is_read %}
+                            <span class="px-2 py-1 bg-red-100 text-green-800 text-xs rounded-full">Unread</span>
+                            {% else %}
+                               <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">Read</span>
+                            {% endif %}
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform duration-200" id="icon-message{{ forloop.counter }}"></i>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <p class="text-gray-700 line-clamp-2">{{ data.message|truncatechars:100 }}</p>
+                    </div>
+                </div>
+                
+                <!-- Expanded Details -->
+                <div class="hidden border-t border-gray-100 bg-gray-50 p-4" id="details-message{{ forloop.counter }}">
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Complete Message</h4>
+                            <p class="text-gray-700 leading-relaxed">
+                                {{ data.message }}
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <span class="font-medium text-gray-600">Email:</span>
+                                <span class="text-gray-900 ml-2">{{data.work_email}}</span>
+                            </div>
+                            <div>
+                                <span class="font-medium text-gray-600">Phone:</span>
+                                <span class="text-gray-900 ml-2">{{data.phone_number}}</span>
+                            </div>
+                            <div>
+                                <span class="font-medium text-gray-600">Country:</span>
+                                <span class="text-gray-900 ml-2">{{data.country_name}}</span>
+                            </div>
+                            <div>
+                                <span class="font-medium text-gray-600">Company:</span>
+                                <span class="px-2 py-10 text-xs rounded-full">{{data.company_name}}</span>
+                            </div>
+                        </div>
+                        <div class="flex space-x-3 pt-2">
+                            <form method="post" action="{% url 'mark_as_read' data.id %}">
+                                {% csrf_token %}
+                                {% if not data.is_read %}
+                                <button type="submit" class="px-4 py-2  text-white rounded-lg  bg-gradient-to-r from-blue-800 to-blue-300 hover:bg-gradient-to-r hover:from-blue-900 hover:to-blue-400 transition-colors">
+                                    Mark as Read
+                                </button>
+                                {% else %}
+                                <h1 class="border  bg-green-300">Message is already read</h1>
+                                {% endif %}
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+{% endfor %}
+
+
+
+
+        </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        function toggleMessage(messageId) {
+            const details = document.getElementById(`details-${messageId}`);
+            const icon = document.getElementById(`icon-${messageId}`);
+            
+            if (details.classList.contains('hidden')) {
+                // Close all other messages first
+                document.querySelectorAll('[id^="details-"]').forEach(detail => {
+                    if (detail !== details) {
+                        detail.classList.add('hidden');
+                    }
+                });
+                
+                // Reset all icons
+                document.querySelectorAll('[id^="icon-"]').forEach(iconEl => {
+                    if (iconEl !== icon) {
+                        iconEl.style.transform = 'rotate(0deg)';
+                    }
+                });
+                
+                // Show current message details
+                details.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                // Hide current message details
+                details.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Add hover effects
+        document.querySelectorAll('.message-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.classList.add('transform', 'scale-[1.01]');
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.classList.remove('transform', 'scale-[1.01]');
+            });
+        });
+    </script>
+</body>
+</html>

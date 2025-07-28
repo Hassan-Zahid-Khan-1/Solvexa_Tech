@@ -1,0 +1,718 @@
+{% extends "base.html" %}
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+ <div class="bg-green-200 text-center">
+           {% if messages %}
+              <ul class="messages">
+                  {% for message in messages %}
+                   <li{% if message.tags %} class="{{ message.tags }} "{% endif %}>{{ message }}</li>
+             {% endfor %}
+               </ul>
+              {% endif %}
+        </div>
+ <div class="overflow-hidden">
+      <!-- Example Hero Section -->
+      <section class="relative bg-gradient-to-br from-blue-50 via-white to-purple-50 py-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="text-center">
+            <h1 class="text-5xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight">
+              Transform Your Business with
+              <span class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600 animate-pulse">
+                Cutting-Edge Software
+              </span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
+              We deliver innovative software solutions that drive growth, enhance efficiency, 
+              and give you a competitive edge in today's digital landscape. Join 50+ successful companies.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+              <a href="#contact-form" class="group bg-gradient-to-r from-blue-800 to-blue-300 text-white px-10 py-5 rounded-xl hover:from-blue-900 hover:to-blue-400 transition-all duration-300 flex items-center justify-center text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                Get Started Today
+                <!-- Example ArrowRight SVG -->
+                <svg class="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </a>
+              <a href="#services" class="group border-2 border-blue-600 text-blue-600 px-10 py-5 rounded-xl hover:bg-blue-300 hover:text-white transition-all duration-300 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                View Our Services
+                <!-- Example Code2 SVG -->
+                <svg class="ml-3 h-6 w-6 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+              </a>
+            </div>
+            <div class="flex flex-wrap justify-center items-center gap-8 text-gray-500">
+              <div class="flex items-center">
+                <svg class="h-5 w-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 0 0-1.414 0L9 11.586 6.707 9.293a1 1 0 1 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0-1.414-1.414z"/></svg>
+                <span>Free Consultation</span>
+              </div>
+              <div class="flex items-center">
+                <svg class="h-5 w-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 0 0-1.414 0L9 11.586 6.707 9.293a1 1 0 1 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0-1.414-1.414z"/></svg>
+                <span>Money-Back Guarantee</span>
+              </div>
+              <div class="flex items-center">
+                <svg class="h-5 w-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 0 0-1.414 0L9 11.586 6.707 9.293a1 1 0 1 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0-1.414-1.414z"/></svg>
+                <span id="services">24/7 Support</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- You can continue converting the rest of your sections in a similar way -->
+    </div>
+
+{% comment %} services Starting {% endcomment %}
+ <div class="animate-fade-in">
+      <!-- Hero Section -->
+      <section class="bg-gradient-to-br from-blue-50 to-purple-50 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Our Services
+          </h1>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Comprehensive software solutions designed to accelerate your business growth 
+            and digital transformation journey.
+          </p>
+        </div>
+      </section>
+      <!-- Example Services Grid (static, for demo) -->                                 
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+
+
+
+            {% comment %} web development card  {% endcomment %}
+            <div class="bg-white border border-blue-200 rounded-xl p-8 hover:shadow-xl transition-all duration-300 hover:border-blue-300 group">
+              <a href="#contact-form" class="block">
+              <div class="flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                <!-- Example icon -->
+                <svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">Web Development</h3>
+              <p class="text-gray-600 mb-6">Modern, scalable websites and web apps for your business.</p>
+              <ul class="space-y-2 mb-6">
+                <li class="flex items-center text-gray-600"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>Responsive Design</li>
+                <li class="flex items-center text-gray-600"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>SEO Optimized</li>
+                <li class="flex items-center text-gray-600"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>Fast Performance</li>
+                   <li class="flex items-center text-gray-600"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>Modern Tech Stack</li>
+              </ul>
+              </a>
+            </div>
+
+            {% comment %} mobile app development card  {% endcomment %}
+            <div class="bg-white border border-blue-200 rounded-xl p-8 hover:shadow-xl transition-all duration-300 hover:border-blue-300 group">
+                <a href="#contact-form" class="block">
+              <div class="flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                <!-- Example icon -->
+               <i class="fa-solid fa-mobile-screen-button"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">Mobile App Development</h3>
+              <p class="text-gray-600 mb-6">Custom mobile applications for iOS and Android platforms.</p>
+              <ul class="space-y-2 mb-6">
+                <li class="flex items-center text-gray-600"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>Native & Cross-Platform Apps</li>
+                <li class="flex items-center text-gray-600"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>Intuitive User Interfaces</li>
+                <li class="flex items-center text-gray-600"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>App Store Deployment Supporte</li>
+                <li class="flex items-center text-gray-600"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>Push Notifications & Analytics</li>
+               
+              </ul>
+              </a>
+            </div>
+            <!-- Repeat for more services as needed -->
+
+
+{% comment %} third card {% endcomment %}
+ <div class="bg-white border border-blue-200 rounded-xl p-8 hover:shadow-xl transition-all duration-300 hover:border-blue-300 group">
+    <a href="#contact-form" class="block">
+        <div class="flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+        
+ 
+<i class="fa-solid fa-object-ungroup"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">UI/UX Design</h3>
+        <p class="text-gray-600 mb-6">Beautiful, user-friendly digital experiences that drive engagement.</p>
+        <ul class="space-y-2 mb-6 text-gray-600">
+          <li class="flex items-center"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>Wireframing & Prototyping</li>
+          <li class="flex items-center"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>User-Centered Design</li>
+          <li class="flex items-center"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>Interactive Mockups</li>
+          <li class="flex items-center"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>Cross-Device Consistency</li>
+        </ul>
+       </a>
+      </div>
+{% comment %} third card end here  {% endcomment %}
+      {% comment %} forth card {% endcomment %}
+    <div class="bg-white border border-blue-200 rounded-xl p-8 hover:shadow-xl transition-all duration-300 hover:border-blue-300 group">
+        <a href="#contact-form" class="block">
+        <div class="flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+           <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">E-Commerce Solutions</h3>
+        <p class="text-gray-600 mb-6">Robust online stores to grow your digital business.</p>
+        <ul class="space-y-2 mb-6 text-gray-600">
+          <li class="flex items-center"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>Secure Payment Integration</li>
+          <li class="flex items-center"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>Product & Order Management</li>
+          <li class="flex items-center"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>Mobile-First Design</li>
+          <li class="flex items-center"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>Scalable for Growth</li>
+        </ul>     
+        <a href=""></a>  
+      </div>
+      {% comment %} forth card end here  {% endcomment %}
+
+      {% comment %} digital marketing card  {% endcomment %}
+      <div class="bg-white border border-blue-200 rounded-xl p-8 hover:shadow-xl transition-all duration-300 hover:border-blue-300 group">
+          <a href="#contact-form" class="block">
+  <div class="flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+    <i class="fa-solid fa-bullhorn"></i>
+  </div>
+  <h3 class="text-xl font-semibold text-gray-900 mb-4">Digital Marketing</h3>
+  <p class="text-gray-600 mb-6">Strategies to grow your online presence and increase conversions.</p>
+  <ul class="space-y-2 mb-6 text-gray-600">
+    <li class="flex items-center"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>SEO & SEM Campaigns</li>
+    <li class="flex items-center"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>Social Media Marketing</li>
+    <li class="flex items-center"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>Email Automation</li>
+    <li class="flex items-center"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>Analytics & Performance Reports</li>
+  </ul>
+  </a>
+</div>
+{% comment %} digital marketing card ends here {% endcomment %}
+
+{% comment %} graphic designing card start here  {% endcomment %}
+<div class="bg-white border border-blue-200 rounded-xl p-8 hover:shadow-xl transition-all duration-300 hover:border-blue-300 group">
+    <a href="#contact-form" class="block">
+  <div class="flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+    <i class="fa-solid fa-pen-nib"></i>
+  </div>
+  <h3 class="text-xl font-semibold text-gray-900 mb-4">Graphic Designing</h3>
+  <p class="text-gray-600 mb-6">Creative visuals that elevate your brand identity and communication.</p>
+  <ul class="space-y-2 mb-6 text-gray-600">
+    <li class="flex items-center"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>Logo & Brand Design</li>
+    <li class="flex items-center"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>Social Media Graphics</li>
+    <li class="flex items-center"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>Marketing Materials</li>
+    <li class="flex items-center"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>UI Assets & Illustrations</li>
+  </ul>
+  </a>
+</div>
+{% comment %} graphic designing card ends here {% endcomment %}
+
+{% comment %} video editing card start here  {% endcomment %}
+<div class="bg-white border border-blue-200 rounded-xl p-8 hover:shadow-xl transition-all duration-300 hover:border-blue-300 group">
+    <a href="#contact-form" class="block">
+  <div class="flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+    <i class="fa-solid fa-scissors"></i>
+  </div>
+  <h3 class="text-xl font-semibold text-gray-900 mb-4">Video Editing</h3>
+  <p class="text-gray-600 mb-6">Engaging and professional video content for all digital platforms.</p>
+  <ul class="space-y-2 mb-6 text-gray-600">
+    <li class="flex items-center"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>Cutting & Trimming with Precision</li>
+    <li class="flex items-center"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>Motion Graphics & Transitions</li>
+    <li class="flex items-center"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>Color Grading & Audio Enhancement</li>
+    <li class="flex items-center"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>Platform-Optimized Exports</li>
+  </ul>
+  </a>
+</div>
+{% comment %} video editing card ends here {% endcomment %}
+
+
+          </div>
+        </div>
+      </section>
+      <!-- Example CTA Section -->
+      <section class="py-20 bg-gradient-to-r from-blue-700 to-blue-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+         
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            Ready to Get Started?
+          </h2>
+          </button>
+          <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            Let's discuss your project requirements and create a solution that drives results.
+          </p>
+          <a href="#contact-form" class="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors duration-200 font-semibold inline-block" id="about-us">
+            Lets go
+          </a>
+        </div>
+      </section>
+    </div>
+
+{% comment %} about us is starting from here {% endcomment %}
+
+
+<div class="animate-fade-in">
+      <!-- Hero Section -->
+      <section class="bg-gradient-to-br from-blue-50 to-purple-50 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              About Solvexa Tech
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+              We're a passionate team of developers, designers, and strategists dedicated to 
+              transforming businesses through innovative software solutions.
+            </p>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div class="bg-white rounded-lg p-6 shadow-lg">
+              <div class="text-3xl font-bold text-blue-600 mb-2">50+</div>
+              <div class="text-gray-600">Projects</div>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-lg">
+              <div class="text-3xl font-bold text-blue-600 mb-2">2024</div>
+              <div class="text-gray-600">Founded</div>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-lg">
+              <div class="text-3xl font-bold text-blue-600 mb-2">20+</div>
+              <div class="text-gray-600">Team Members</div>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-lg">
+              <div class="text-3xl font-bold text-blue-600 mb-2">100%</div>
+              <div class="text-gray-600">Client Satisfaction</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Story Section -->
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Our Story
+              </h2>
+              <p class="text-lg text-gray-600 mb-6">
+                Founded in 2024, Solvexa Tech emerged from a simple belief: that technology should 
+                empower businesses, not complicate them. Our founders, with decades of combined 
+                experience in software development and business strategy, set out to create a 
+                company that bridges the gap between complex technology and practical business solutions.
+              </p>
+              <p class="text-lg text-gray-600 mb-6">
+                Today, we're proud to have helped over 50 businesses transform their operations, 
+                streamline their processes, and achieve their digital goals. From startups to 
+                enterprise companies, we've delivered solutions that make a real difference.
+              </p>
+              <p class="text-lg text-gray-600">
+                Our commitment to excellence, innovation, and client success continues to drive 
+                everything we do. We're not just building software – we're building the future 
+                of business.
+              </p>
+            </div>
+            <div class="relative">
+              <img
+                src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Team collaboration"
+                class="rounded-lg shadow-xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Values Section -->
+      <section class="py-20 bg-purple-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our values
+            </h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+              The principles that guide our work and define our culture.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-6">
+                <svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">Innovation</h3>
+              <p class="text-gray-600">We embrace new ideas and technologies to deliver the best solutions.</p>
+            </div>
+            <div class="text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-6">
+                <svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 12l2 2 4-4"/></svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">Integrity</h3>
+              <p class="text-gray-600">We act with honesty and transparency in all our dealings.</p>
+            </div>
+            <div class="text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-6">
+                <svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2h5"/></svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">Teamwork</h3>
+              <p class="text-gray-600">We believe in the power of collaboration to achieve great results.</p>
+            </div>
+            <div class="text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-6">
+                <svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3"/></svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">Excellence</h3>
+              <p class="text-gray-600">We strive for the highest standards in everything we do.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Team Section -->
+      {% comment %} <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Meet Our Team
+            </h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+              The talented individuals who make TechFlow's success possible.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div
+              class="text-center bg-purple-50 rounded-xl p-8 hover:shadow-lg transition-shadow duration-300"
+            >
+              <img
+                src="https://randomuser.me/api/portraits/men/1.jpg"
+                alt="John Doe"
+                class="w-24 h-24 rounded-full mx-auto mb-6 object-cover"
+              />
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                John Doe
+              </h3>
+              <p class="text-blue-600 font-medium mb-4">
+                CEO & Founder
+              </p>
+              <p class="text-gray-600 mb-6">
+                John is a visionary leader with a passion for technology and innovation.
+              </p>
+              <div class="flex justify-center space-x-4"> {% endcomment %}
+                {% comment %} <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-600 transition-colors"
+                >
+                  <!-- LinkedIn Icon -->
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 2.67 5.67 2 6.5 2h11c.83 0 1.5.67 1.5 1.5v11c0 .83-.67 1.5-1.5 1.5h-11c-.83 0-1.5-.67-1.5-1.5v-11zM8 11h2v8H8v-8zm7 8h-2v-4c0-1.1-.9-2-2-2h-1v-2h1c2.21 0 4 1.79 4 4v4z"/></svg>
+                </a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-600 transition-colors"
+                >
+                  <!-- Twitter Icon -->
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.643 4.937c-.835.371-1.732.62-2.675.735a4.686 4.686 0 0 0 2.043-2.573 9.373 9.373 0 0 1-2.925 1.115A4.688 4.688 0 0 0 16.337 3c-2.593 0-4.688 2.095-4.688 4.688 0 .367.042.724.126 1.067-3.905-.196-7.373-2.063-9.703-4.915a4.688 4.688 0 0 0-.634 2.354c0 1.623.826 3.055 2.081 3.895a4.674 4.674 0 0 1-2.125-.586v.059c0 2.267 1.607 4.157 3.733 4.585a4.688 4.688 0 0 1-2.124.08c.601 1.875 2.335 3.229 4.375 3.267A9.373 9.373 0 0 1 2 18.293a13.227 13.227 0 0 0 7.557 2.211c9.057 0 14.004-7.507 14.004-14.004 0-.213-.004-.426-.014-.637A10.036 10.036 0 0 0 24 4.557a9.373 9.373 0 0 1-2.357.646A4.688 4.688 0 0 0 23.643 4.937z"/></svg>
+                </a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-600 transition-colors"
+                >
+                  <!-- GitHub Icon -->
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.25C6.75 2.25 3 6 3 12c0 4.5 3 8.25 8.25 9.75.6.1.75-.25.75-.6v-2.25c-3.75.75-4.5-1.5-4.5-1.5-.6-1.5-1.5-1.9-1.5-1.9-1.2-.9 0-1.2 0-1.2 1.5 0 2.25 1.5 2.25 1.5 1.5 2.25 3.75 1.5 4.5 1.2.15-.9.6-1.5 1.2-1.9-3.75-.45-7.5-1.8-7.5-7.5 0-1.65.6-3 1.5-4.05-.15-.45-.6-1.5.15-3.15 0 0 1.2-.45 3.9 1.5 1.2-.3 2.4-.45 3.6-.45 1.2 0 2.4.15 3.6.45 2.7-1.95 3.9-1.5 3.9-1.5.75 1.65.3 2.7.15 3.15.9 1.05 1.5 2.4 1.5 4.05 0 5.7-3.75 7.05-7.5 7.5.6.45 1.2 1.35 1.2 2.7v4.05c0 .35.15.75.75.6A9.003 9.003 0 0 0 21 12c0-5.25-3.75-9-9-9z"/></svg>
+                </a>
+              </div>
+            </div>
+            <div
+              class="text-center bg-purple-50 rounded-xl p-8 hover:shadow-lg transition-shadow duration-300"
+            >
+              <img
+                src="https://randomuser.me/api/portraits/women/2.jpg"
+                alt="Jane Doe"
+                class="w-24 h-24 rounded-full mx-auto mb-6 object-cover"
+              />
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Jane Doe
+              </h3>
+              <p class="text-blue-600 font-medium mb-4">
+                CTO & Co-Founder
+              </p>
+              <p class="text-gray-600 mb-6">
+                Jane is a tech enthusiast who loves building scalable web applications.
+              </p>
+              <div class="flex justify-center space-x-4">
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-600 transition-colors"
+                >
+                  <!-- LinkedIn Icon -->
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 2.67 5.67 2 6.5 2h11c.83 0 1.5.67 1.5 1.5v11c0 .83-.67 1.5-1.5 1.5h-11c-.83 0-1.5-.67-1.5-1.5v-11zM8 11h2v8H8v-8zm7 8h-2v-4c0-1.1-.9-2-2-2h-1v-2h1c2.21 0 4 1.79 4 4v4z"/></svg>
+                </a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-600 transition-colors"
+                >
+                  <!-- Twitter Icon -->
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.643 4.937c-.835.371-1.732.62-2.675.735a4.686 4.686 0 0 0 2.043-2.573 9.373 9.373 0 0 1-2.925 1.115A4.688 4.688 0 0 0 16.337 3c-2.593 0-4.688 2.095-4.688 4.688 0 .367.042.724.126 1.067-3.905-.196-7.373-2.063-9.703-4.915a4.688 4.688 0 0 0-.634 2.354c0 1.623.826 3.055 2.081 3.895a4.674 4.674 0 0 1-2.125-.586v.059c0 2.267 1.607 4.157 3.733 4.585a4.688 4.688 0 0 1-2.124.08c.601 1.875 2.335 3.229 4.375 3.267A9.373 9.373 0 0 1 2 18.293a13.227 13.227 0 0 0 7.557 2.211c9.057 0 14.004-7.507 14.004-14.004 0-.213-.004-.426-.014-.637A10.036 10.036 0 0 0 24 4.557a9.373 9.373 0 0 1-2.357.646A4.688 4.688 0 0 0 23.643 4.937z"/></svg>
+                </a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-600 transition-colors"
+                >
+                  <!-- GitHub Icon -->
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.25C6.75 2.25 3 6 3 12c0 4.5 3 8.25 8.25 9.75.6.1.75-.25.75-.6v-2.25c-3.75.75-4.5-1.5-4.5-1.5-.6-1.5-1.5-1.9-1.5-1.9-1.2-.9 0-1.2 0-1.2 1.5 0 2.25 1.5 2.25 1.5 1.5 2.25 3.75 1.5 4.5 1.2.15-.9.6-1.5 1.2-1.9-3.75-.45-7.5-1.8-7.5-7.5 0-1.65.6-3 1.5-4.05-.15-.45-.6-1.5.15-3.15 0 0 1.2-.45 3.9 1.5 1.2-.3 2.4-.45 3.6-.45 1.2 0 2.4.15 3.6.45 2.7-1.95 3.9-1.5 3.9-1.5.75 1.65.3 2.7.15 3.15.9 1.05 1.5 2.4 1.5 4.05 0 5.7-3.75 7.05-7.5 7.5.6.45 1.2 1.35 1.2 2.7v4.05c0 .35.15.75.75.6A9.003 9.003 0 0 0 21 12c0-5.25-3.75-9-9-9z"/></svg>
+                </a>
+              </div>
+            </div>
+            <div
+              class="text-center bg-purple-50 rounded-xl p-8 hover:shadow-lg transition-shadow duration-300"
+            >
+              <img
+                src="https://randomuser.me/api/portraits/men/3.jpg"
+                alt="Mike Ross"
+                class="w-24 h-24 rounded-full mx-auto mb-6 object-cover"
+              />
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Mike Ross
+              </h3>
+              <p class="text-blue-600 font-medium mb-4">
+                Lead Developer
+              </p>
+              <p class="text-gray-600 mb-6">
+                Mike is a skilled developer with a knack for problem-solving and a love for coding.
+              </p>
+              <div class="flex justify-center space-x-4">
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-600 transition-colors"
+                >
+                  <!-- LinkedIn Icon -->
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 2.67 5.67 2 6.5 2h11c.83 0 1.5.67 1.5 1.5v11c0 .83-.67 1.5-1.5 1.5h-11c-.83 0-1.5-.67-1.5-1.5v-11zM8 11h2v8H8v-8zm7 8h-2v-4c0-1.1-.9-2-2-2h-1v-2h1c2.21 0 4 1.79 4 4v4z"/></svg>
+                </a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-600 transition-colors"
+                >
+                  <!-- Twitter Icon -->
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.643 4.937c-.835.371-1.732.62-2.675.735a4.686 4.686 0 0 0 2.043-2.573 9.373 9.373 0 0 1-2.925 1.115A4.688 4.688 0 0 0 16.337 3c-2.593 0-4.688 2.095-4.688 4.688 0 .367.042.724.126 1.067-3.905-.196-7.373-2.063-9.703-4.915a4.688 4.688 0 0 0-.634 2.354c0 1.623.826 3.055 2.081 3.895a4.674 4.674 0 0 1-2.125-.586v.059c0 2.267 1.607 4.157 3.733 4.585a4.688 4.688 0 0 1-2.124.08c.601 1.875 2.335 3.229 4.375 3.267A9.373 9.373 0 0 1 2 18.293a13.227 13.227 0 0 0 7.557 2.211c9.057 0 14.004-7.507 14.004-14.004 0-.213-.004-.426-.014-.637A10.036 10.036 0 0 0 24 4.557a9.373 9.373 0 0 1-2.357.646A4.688 4.688 0 0 0 23.643 4.937z"/></svg>
+                </a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-600 transition-colors"
+                >
+                  <!-- GitHub Icon -->
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.25C6.75 2.25 3 6 3 12c0 4.5 3 8.25 8.25 9.75.6.1.75-.25.75-.6v-2.25c-3.75.75-4.5-1.5-4.5-1.5-.6-1.5-1.5-1.9-1.5-1.9-1.2-.9 0-1.2 0-1.2 1.5 0 2.25 1.5 2.25 1.5 1.5 2.25 3.75 1.5 4.5 1.2.15-.9.6-1.5 1.2-1.9-3.75-.45-7.5-1.8-7.5-7.5 0-1.65.6-3 1.5-4.05-.15-.45-.6-1.5.15-3.15 0 0 1.2-.45 3.9 1.5 1.2-.3 2.4-.45 3.6-.45 1.2 0 2.4.15 3.6.45 2.7-1.95 3.9-1.5 3.9-1.5.75 1.65.3 2.7.15 3.15.9 1.05 1.5 2.4 1.5 4.05 0 5.7-3.75 7.05-7.5 7.5.6.45 1.2 1.35 1.2 2.7v4.05c0 .35.15.75.75.6A9.003 9.003 0 0 0 21 12c0-5.25-3.75-9-9-9z"/></svg>
+                </a>
+              </div>
+            </div>
+            <div
+              class="text-center bg-purple-50 rounded-xl p-8 hover:shadow-lg transition-shadow duration-300"
+            >
+              <img
+                src="https://randomuser.me/api/portraits/women/3.jpg"
+                alt="Rachel Green"
+                class="w-24 h-24 rounded-full mx-auto mb-6 object-cover"
+              />
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Rachel Green
+              </h3>
+              <p class="text-blue-600 font-medium mb-4">
+                UX/UI Designer
+              </p>
+              <p class="text-gray-600 mb-6">
+                Rachel is a creative designer who loves crafting beautiful and user-friendly interfaces.
+              </p>
+              <div class="flex justify-center space-x-4">
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-600 transition-colors"
+                >
+                  <!-- LinkedIn Icon -->
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 2.67 5.67 2 6.5 2h11c.83 0 1.5.67 1.5 1.5v11c0 .83-.67 1.5-1.5 1.5h-11c-.83 0-1.5-.67-1.5-1.5v-11zM8 11h2v8H8v-8zm7 8h-2v-4c0-1.1-.9-2-2-2h-1v-2h1c2.21 0 4 1.79 4 4v4z"/></svg>
+                </a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-600 transition-colors"
+                >
+                  <!-- Twitter Icon -->
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.643 4.937c-.835.371-1.732.62-2.675.735a4.686 4.686 0 0 0 2.043-2.573 9.373 9.373 0 0 1-2.925 1.115A4.688 4.688 0 0 0 16.337 3c-2.593 0-4.688 2.095-4.688 4.688 0 .367.042.724.126 1.067-3.905-.196-7.373-2.063-9.703-4.915a4.688 4.688 0 0 0-.634 2.354c0 1.623.826 3.055 2.081 3.895a4.674 4.674 0 0 1-2.125-.586v.059c0 2.267 1.607 4.157 3.733 4.585a4.688 4.688 0 0 1-2.124.08c.601 1.875 2.335 3.229 4.375 3.267A9.373 9.373 0 0 1 2 18.293a13.227 13.227 0 0 0 7.557 2.211c9.057 0 14.004-7.507 14.004-14.004 0-.213-.004-.426-.014-.637A10.036 10.036 0 0 0 24 4.557a9.373 9.373 0 0 1-2.357.646A4.688 4.688 0 0 0 23.643 4.937z"/></svg>
+                </a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-600 transition-colors"
+                >
+                  <!-- GitHub Icon -->
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.25C6.75 2.25 3 6 3 12c0 4.5 3 8.25 8.25 9.75.6.1.75-.25.75-.6v-2.25c-3.75.75-4.5-1.5-4.5-1.5-.6-1.5-1.5-1.9-1.5-1.9-1.2-.9 0-1.2 0-1.2 1.5 0 2.25 1.5 2.25 1.5 1.5 2.25 3.75 1.5 4.5 1.2.15-.9.6-1.5 1.2-1.9-3.75-.45-7.5-1.8-7.5-7.5 0-1.65.6-3 1.5-4.05-.15-.45-.6-1.5.15-3.15 0 0 1.2-.45 3.9 1.5 1.2-.3 2.4-.45 3.6-.45 1.2 0 2.4.15 3.6.45 2.7-1.95 3.9-1.5 3.9-1.5.75 1.65.3 2.7.15 3.15.9 1.05 1.5 2.4 1.5 4.05 0 5.7-3.75 7.05-7.5 7.5.6.45 1.2 1.35 1.2 2.7v4.05c0 .35.15.75.75.6A9.003 9.003 0 0 0 21 12c0-5.25-3.75-9-9-9z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> {% endcomment %}
+      <!-- CTA Section -->
+      {% comment %} <section class="py-20 bg-blue-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            Want to Join Our Team?
+          </h2>
+          <p class="text-xl text-blue-200 mb-8 max-w-2xl mx-auto">
+            We're always looking for talented individuals who share our passion for innovation.
+          </p>
+          <a
+            href="/career"
+            class="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-purple-50 transition-colors duration-200 font-semibold"
+          >
+            View Open Positions
+          </a>
+        </div>
+      </section> {% endcomment %}
+    </div>
+
+    {% comment %} about us sectrion ends here {% endcomment %}
+
+
+
+
+
+{% comment %} Contact section start here {% endcomment %}
+
+ <div class="animate-fade-in" id="contact">
+      <!-- Hero Section -->
+      <section class="bg-gradient-to-br from-blue-50 to-purple-50 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Get In Touch
+          </h1>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Ready to start your next project? We'd love to hear from you. 
+            Send us a message and we'll respond as soon as possible.
+          </p>
+        </div>
+      </section>
+      <!-- Example Contact Info Section (static, for demo) -->
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <div class="text-center p-8 bg-blue-50 rounded-xl hover:bg-blue-100 transition-colors duration-300">
+              <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-6">
+                <!-- Example icon -->
+                <svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 12l-4-4-4 4m8 0v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6"/></svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">Email</h3>
+              <p class="text-blue-600 font-medium mb-2">Solvexa.tech1@gmail.com</p>
+              <p class="text-gray-600 text-sm">We'll reply within 24 hours</p>
+            </div>
+            <div class="text-center p-8 bg-blue-50 rounded-xl hover:bg-blue-100 transition-colors duration-300">
+              <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-6">
+                <svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5zm0 0v14a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2zm16-2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h2zm0 0v14a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2z"/></svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">Phone</h3>
+              <p class="text-blue-600 font-medium mb-2">+92 3025163633 <br> +92 3256547505 </p>
+              {% comment %} <p class="text-gray-600 text-sm">Mon-Fri, 9am-6pm</p> {% endcomment %}
+            </div>
+            {% comment %} <div class="text-center p-8 bg-blue-50 rounded-xl hover:bg-blue-100 transition-colors duration-300">
+              <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-6">
+                <svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 11c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm0 0c-4.418 0-8 2.239-8 5v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2c0-2.761-3.582-5-8-5z"/></svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">Location</h3>
+              <p class="text-blue-600 font-medium mb-2">San Francisco, CA</p>
+              <p class="text-gray-600 text-sm">Visit us for a coffee!</p>
+            </div> {% endcomment %}
+            <div class="text-center p-8 bg-blue-50 rounded-xl hover:bg-blue-100 transition-colors duration-300">
+              <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-6">
+                <svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2h5"/></svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">Support</h3>
+              <p class="text-blue-600 font-medium mb-2">support@techflow.com</p>
+              <p class="text-gray-600 text-sm">24/7 support available</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Example CTA Section -->
+      <section class="py-20 bg-gradient-to-r from-blue-700 to-blue-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            Ready to Start Your Project?
+          </h2>
+          <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            Schedule a free consultation call to discuss your project requirements and get a custom quote.
+          </p>
+          <button onclick="scrollToContact()" id="contact-form" class="bg-white text-blue-600 px-6 py-3 rounded-lg  transition-colors duration-200 font-semibold inline-block  hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-200 hover:text-white" >
+            Lets Contact Us
+    
+          </button >
+        </div>
+      </section>
+    </div>
+
+    {% comment %} contact section ends here  {% endcomment %}
+
+<!-- End of services section -->
+
+ <div class="max-w-3xl mx-auto bg-white p-10 rounded-2xl mt-10"   >
+    <!-- Heading and Description -->
+    <div class="text-center mb-8">
+      <h2 class="text-3xl font-bold text-gray-800 mb-2">Get in Touch</h2>
+      <p class="text-gray-600 text-sm">
+        We'd love to hear from you! Please fill out the form below and our team will get back to you as soon as possible.
+      </p>
+    </div>
+
+    <!-- Contact Form -->
+    <form action="" method="POST" class="space-y-6" >
+      <!-- CSRF Token for security -->
+    {% csrf_token %}
+      <!-- Row 1: First and Last Name -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label for="first-name" class="block text-sm font-medium text-gray-700">First Name *</label>
+          <input type="text" id="first-name" name="first-name" required placeholder="Enter your first name"
+            class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 focus:ring-indigo-500 focus:border-indigo-500">
+        </div>
+
+        <div>
+          <label for="last-name" class="block text-sm font-medium text-gray-700">Last Name *</label>
+          <input type="text" id="last-name" name="last-name" required placeholder="Enter your last name"
+            class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 focus:ring-indigo-500 focus:border-indigo-500">
+        </div>
+      </div>
+
+      <!-- Work Email -->
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700">Work Email Address *</label>
+        <input type="email" id="email" name="email" required placeholder="Enter your work email address"
+          class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 focus:ring-indigo-500 focus:border-indigo-500">
+      </div>
+
+      {% comment %} phone no  {% endcomment %}
+ <div>
+        <label for="email" class="block text-sm font-medium text-gray-700">Phone no. *</label>
+        <input type="tel" id="phone" name="phone" required
+        placeholder="Enter your work phone number"
+          class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 focus:ring-indigo-500 focus:border-indigo-500">
+      </div>
+
+      <!-- Company Name -->
+      <div>
+        <label for="company" class="block text-sm font-medium text-gray-700">Company Name </label>
+        <input type="text" id="company" name="company"  placeholder="Enter your company name"
+          class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 focus:ring-indigo-500 focus:border-indigo-500">
+      </div>
+
+      <!-- Country -->
+      <div>
+        <label for="country" class="block text-sm font-medium text-gray-700">Country Name</label>
+        <input type="text" id="country" name="country" placeholder="Enter your country"
+          class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 focus:ring-indigo-500 focus:border-indigo-500">
+      </div>
+{% comment %} message {% endcomment %}
+<div>
+        <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Write your message here..."
+          class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 focus:ring-indigo-500 focus:border-indigo-500 resize-y"></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <div>
+        <button type="submit"
+          class="w-full bg-indigo-600 text-white font-semibold py-3 px-6 rounded-md 
+         bg-gradient-to-r from-blue-600 to-blue-200 
+          transition  hover:bg-gradient-to-r hover:from-blue-700 hover:to-blue-300">
+          Submit
+        </button>
+      </div>
+    </form>
+ 
+
+    <script>
+      function scrollToContact() {
+    // Scroll to the first <section> element on the page
+    const contactSection = document.querySelector('#contact-form');
+    contactSection.scrollIntoView({ behavior: 'smooth' });
+  }
+    </script>
+  </div>
+{% endblock %}
+
+{% block footer %}
+    
+{% endblock %}
