@@ -24,10 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-xna))1h*26t6##6c^xj2z&@)y2zci)i3-n2kzt0$qvob((ic$t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['.onrender.com']
 
 
 # Application definition
@@ -140,3 +140,6 @@ STATICFILE_URL=os.path.join(BASE_DIR, 'static')
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+if os.getenv('RENDER'):
+    import dj_database_url
+    DATABASES['default'] = dj_database_url.config(default=os.getenv('DATABASE_URL'))
