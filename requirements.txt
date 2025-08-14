@@ -34,6 +34,9 @@ packaging==25.0
 sqlparse==0.5.3
 tzdata==2025.2
 
+Django>=5.0
+dj-database-url
+psycopg2-binary
 
 
 
