@@ -29,7 +29,7 @@ DEBUG = False
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ["*"]
 
-CSRF_TRUSTED_ORIGINS = ['https://solvexa-tech.onrender.com/']
+# CSRF_TRUSTED_ORIGINS = ['https://solvexa-tech.onrender.com/']
 # Application definition
 
 INSTALLED_APPS = [
