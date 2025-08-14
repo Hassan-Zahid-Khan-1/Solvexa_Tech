@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-xna))1h*26t6##6c^xj2z&@)y2zci)i3-n2kzt0$qvob((ic$t
 DEBUG = False
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['.onrender.com']
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
