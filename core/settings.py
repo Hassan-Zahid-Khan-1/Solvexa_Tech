@@ -29,7 +29,7 @@ DEBUG = False
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ["*"]
 
-CSRF_TRUSTED_ORIGINS = ['https://your-app-name.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['https://solvexa-tech.onrender.com/']
 # Application definition
 
 INSTALLED_APPS = [
@@ -59,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
        "django_browser_reload.middleware.BrowserReloadMiddleware",
+     'whitenoise.middleware.WhiteNoiseMiddleware',
      
 ]
 
